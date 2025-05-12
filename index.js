@@ -1,5 +1,4 @@
 console.log("Hello, World!");
-getComputerChoice();
 function getComputerChoice() {
   const choices = ["rock", "paper", "scissors"];
   const randomIndex = Math.floor(Math.random() * choices.length);
@@ -42,32 +41,34 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function playGame() {
-    let humanScore = 0;
-    let computerScore = 0;
+  let humanScore = 0;
+  let computerScore = 0;
 
-    function playRound(humanChoice, computerChoice) {
-        if (humanChoice === computerChoice) {
-            return "It's a tie!";
-        } else if (
-            (humanChoice === "rock" && computerChoice === "scissors") ||
-            (humanChoice === "paper" && computerChoice === "rock") ||
-            (humanChoice === "scissors" && computerChoice === "paper")
-        ) {
-            humanScore++;
-            return `You win! ${humanChoice} beats ${computerChoice}.`;
-        } else {
-            computerScore++;
-            return `You lose! ${computerChoice} beats ${humanChoice}.`;
-        }
+  function playRound(humanChoice, computerChoice) {
+    if (humanChoice === computerChoice) {
+      return "It's a tie!";
+    } else if (
+      (humanChoice === "rock" && computerChoice === "scissors") ||
+      (humanChoice === "paper" && computerChoice === "rock") ||
+      (humanChoice === "scissxors" && computerChoice === "paper")
+    ) {
+      humanScore++;
+      return `You win! ${humanChoice} beats ${computerChoice}.`;
+    } else {
+      computerScore++;
+      return `You lose! ${computerChoice} beats ${humanChoice}.`;
     }
+  }
 
-    for (let i = 0; i < 5; i++) {
-        const humanChoice = getHumanChoice();
-        const computerChoice = getComputerChoice();
-        console.log(playRound(humanChoice, computerChoice));
-    }
+  for (let i = 0; i < 5; i++) {
+    const humanChoice = getHumanChoice();
+    const computerChoice = getComputerChoice();
+    console.log(playRound(humanChoice, computerChoice));
+  }
 
-    console.log(`Final Score - Human: ${humanScore}, Computer: ${computerScore}`);
+  console.log(`Final Score - Human: ${humanScore}, Computer: ${computerScore}`);
 }
 
 playGame();
+// This code implements a simple Rock-Paper-Scissors game where the user plays against the computer.
+// The game consists of the following functions:
